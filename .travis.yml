@@ -1,6 +1,6 @@
 branches:
   only:
-    - master
+  - master
 sudo: required
 before_install:
 - chmod +x ./build-scripts/install-dependencies.sh
@@ -11,3 +11,6 @@ install:
 - "./build-scripts/inject-secrets.sh"
 script:
 - "./build-scripts/deploy-terraform.sh"
+env:
+  global:
+    secure: uiujlCKqz5AGfjmb0fDK+PWOPXjxBUbIppakC7LTxka9j5RMT8PnyQn24OI8BIlB3nymsTcLyGOCdFf+8ksvM7zI7wa0TZE/9HqZO7HRIsinjAAgR/JLtOm2Lg3emHWx78cFHhsseB+c0+e2jpLyqlxnAAwAcFxwKY6QEAPwGV0H8JlAtrX6ZqF/Wx+g6bwh98v2i4wbLNEq/r8v2a07kRKpmBH5G/+am+dFn8T77mCsV4eKBum0JeQjEwVBTwLQQzlxW8Mmg/IpFtme5OWiaLDbWlypWHV6128Q/Zf3I2VZPCMDJ8Ud5j1zhYGWfZK3O+J311bvS6u3WXIXVOgQtpVbuPoYme9MTyGq/xdWTg+ZkR8/NctbTUAz3P76LhD59FoKn+FItzza+gOvWZGYkqdgQseiJtI+eQtVqBqBztAshHXgSXiot+wqQx/RcFxZHtx14s3XG5h4slL7iYXtxSXVKYEUH1ii9RVMwpGXPjMzqKX44lWOruSnjZ0qjJC/ii6g6sqqfc66y03FWXRhm45DniHP8focyg6OUP+NwyjIMqM78SbJROBS5FYZOlHRY/A5BKe+4X+Ucz12yvlonctBykX3hFDAI+fuOoAyG2+Wk+HBrSXlz11Xbz6DSSjNDSnxDNwBCcL/fADIg9VymczHia+ARnRXni6JEVNaasw=

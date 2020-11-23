@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: salutations-deployment
+  labels:
+    app: salutations
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: salutations
+  template:
+    metadata:
+      labels:
+        app: salutations
+    spec:
+      containers:
+      - name: salutations-globe
+        image: justatad/salutations_globe
+        ports:
+        - containerPort: 8080
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: salutations-service
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: projitau.vinnland.com
+spec:
+  type: LoadBalancer
+  selector:
+    app: salutations
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080

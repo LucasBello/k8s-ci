@@ -1,0 +1,13 @@
+branches:
+  only:
+    - master
+sudo: required
+before_install:
+- chmod +x ./build-scripts/install-dependencies.sh
+- chmod +x ./build-scripts/deploy-terraform.sh
+- chmod +x ./build-scripts/inject-secrets.sh
+install:
+- "./build-scripts/install-dependencies.sh"
+- "./build-scripts/inject-secrets.sh"
+script:
+- "./build-scripts/deploy-terraform.sh"
